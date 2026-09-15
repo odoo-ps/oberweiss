@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="PosDebugButton" owl="1">
+        <div class="oe_status" t-on-click="onClick" style="display: flex;align-items: center;">
+	    <t t-set="status" t-value="state.status"/>
+	    <div
+		t-attf-class="oe-icon {{status === 'running' ? 'js_connected' : 'js_disconnected' }}"
+	    >
+		<i
+		    class="fa fa-fw fa-bug"
+		    role="img"
+		    t-attf-style="color: {{status === 'running' ? 'green' : status === 'stopped' ? 'black' : 'red' }}"
+		    t-attf-aria-label="POS Debug {{status === 'running' ? 'enabled' : status === 'stopped' ? 'disabled' : 'failed' }}"
+		    t-attf-title="POS Debug {{status === 'running' ? 'enabled' : status === 'stopped' ? 'disabled' : 'failed' }}"
+	        />
+	    </div>
+        </div>
+    </t>
+
+</templates>
